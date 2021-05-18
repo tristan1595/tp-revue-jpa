@@ -2,10 +2,27 @@ package sopra.revue.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "publication")
 public class Publication {
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Column(name = "year")
 	private Date annee;
+	@Column(name = "nbOfpages")
 	private Integer nbPages;
+	@ManyToOne
+	@JoinColumn(name = "revue_id")
+	private Revue revue;
 	
 	public Publication() {
 		super();
@@ -40,4 +57,13 @@ public class Publication {
 	public void setNbPages(Integer nbPages) {
 		this.nbPages = nbPages;
 	}
+
+	public Revue getRevue() {
+		return revue;
+	}
+
+	public void setRevue(Revue revue) {
+		this.revue = revue;
+	}
+	
 }
