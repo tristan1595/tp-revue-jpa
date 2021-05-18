@@ -7,14 +7,12 @@ import sopra.revue.repository.IArticleEstPublieRepository;
 import sopra.revue.repository.IArticleFaitReferenceRepository;
 import sopra.revue.repository.IArticleRepository;
 import sopra.revue.repository.IAuteurRepository;
-import sopra.revue.repository.IPeriodiciteRepository;
 import sopra.revue.repository.IPublicationRepository;
 import sopra.revue.repository.IRevueRepository;
 import sopra.revue.repository.jpa.ArticleEstPublieJpa;
 import sopra.revue.repository.jpa.ArticleFaitReferenceJpa;
 import sopra.revue.repository.jpa.ArticleJpa;
 import sopra.revue.repository.jpa.AuteurJpa;
-import sopra.revue.repository.jpa.PeriodiciteJpa;
 import sopra.revue.repository.jpa.PublicationJpa;
 import sopra.revue.repository.jpa.RevueJpa;
 
@@ -28,7 +26,6 @@ public class Application {
 	private final IArticleFaitReferenceRepository articleFaitReferenceRepo = new ArticleFaitReferenceJpa();
 	private final IArticleRepository articleRepo = new ArticleJpa();
 	private final IAuteurRepository auteurRepo = new AuteurJpa();
-	private final IPeriodiciteRepository periodiciteRepo = new PeriodiciteJpa();
 	private final IPublicationRepository publicationRepo = new PublicationJpa();
 	private final IRevueRepository revueRepo = new RevueJpa();
 	
@@ -62,10 +59,6 @@ public class Application {
 
 	public IAuteurRepository getAuteurRepo() {
 		return auteurRepo;
-	}
-
-	public IPeriodiciteRepository getPeriodiciteRepo() {
-		return periodiciteRepo;
 	}
 
 	public IPublicationRepository getPublicationRepo() {
