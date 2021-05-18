@@ -20,7 +20,7 @@ import sopra.revue.repository.jpa.RevueJpa;
 public class Application {
 	
 	private static Application instance = null;
-	private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("formation-jpa");
+	private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("tp-revue-jpa");
 	
 	private final IArticleEstPublieRepository articleEstPublieRepo = new ArticleEstPublieJpa();
 	private final IArticleFaitReferenceRepository articleFaitReferenceRepo = new ArticleFaitReferenceJpa();
