@@ -1,14 +1,18 @@
 package sopra.revue.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "magazine")
-
 public class Revue {
 	@Id
 	@GeneratedValue
@@ -17,6 +21,8 @@ public class Revue {
 	private String nom;
 	@Column(name = "periodicity")
 	private Periodicite periodicite;
+	@OneToMany(mappedBy="revue")
+	private List<Publication> publications = new ArrayList<Publication>();
 	
 	public Revue() {
 		super();
@@ -51,7 +57,12 @@ public class Revue {
 	public void setPeriodicite(Periodicite periodicite) {
 		this.periodicite = periodicite;
 	}
-	
-	
-			
+
+	public List<Publication> getPublications() {
+		return publications;
+	}
+
+	public void setPublications(List<Publication> publications) {
+		this.publications = publications;
+	}
 }
