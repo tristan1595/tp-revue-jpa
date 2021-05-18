@@ -5,14 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+@Entity
+	@Table(name = "article")
 
 public class Article {
-	
+	@Id
+	@GeneratedValue
 	private Long id;
-	
+	@Column(name = "titre")
 	private String titre;
-	
+	@Column(name = "contenu")
 	private String contenu;
 	
 	public Article() {
