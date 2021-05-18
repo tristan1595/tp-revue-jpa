@@ -1,10 +1,15 @@
 package sopra.revue.model;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Transient;
 
 @Entity
 public class Auteur {
@@ -18,7 +23,8 @@ public class Auteur {
 	private String prenom;
 	@Column(name = "email")
 	private String email;
-	
+	@ManyToMany(mappedBy="auteurs")
+	private List<Article> articles = new ArrayList<Article>();
 	
 	public Auteur() {
 		super();
@@ -55,5 +61,12 @@ public class Auteur {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-		
+
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
 }
