@@ -1,5 +1,7 @@
 package sopra.revue.repository;
 
-public interface IArticleRepository {
+import sopra.revue.model.Article;
 
+public interface IArticleRepository extends IRepository<Article,Long> {
+	
 }
