@@ -51,5 +51,7 @@ public class Revue {
 	public void setPeriodicite(Periodicite periodicite) {
 		this.periodicite = periodicite;
 	}
+	
+	
 			
 }
