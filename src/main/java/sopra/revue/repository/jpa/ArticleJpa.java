@@ -25,7 +25,7 @@ public class ArticleJpa implements IArticleRepository {
 			tx = em.getTransaction();
 			tx.begin();
 
-			TypedQuery<Article> query = em.createQuery("select e from Evaluation e", Article.class);
+			TypedQuery<Article> query = em.createQuery("select a from Article a", Article.class);
 
 			articles = query.getResultList();
 

@@ -17,7 +17,7 @@ public class AuteurJpa implements IAuteurRepository {
 	public List<Auteur> findAll() {
 		List<Auteur> auteurs = new ArrayList<Auteur>();
 
-		EntityManager em = null;
+		EntityManager em = null;  
 		EntityTransaction tx = null;
 
 		try {
@@ -25,7 +25,7 @@ public class AuteurJpa implements IAuteurRepository {
 			tx = em.getTransaction();
 			tx.begin();
 
-			TypedQuery<Auteur> query = em.createQuery("select e from Evaluation e", Auteur.class);
+			TypedQuery<Auteur> query = em.createQuery("select a from Auteur a", Auteur.class);
 
 			auteurs = query.getResultList();
 
